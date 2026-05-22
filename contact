@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact Us | Ban Cheong HardWare Machinery Supply</title>
+  <title>Contact Us | Ban Cheong Hardware Machinery Supply</title>
+  <link rel="icon" href="images/logo-mark.png">
 
   <style>
     body {
@@ -26,21 +27,40 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #8b5e3c;
+      color: #2f2924;
+      text-decoration: none;
     }
 
-    .logo-circle {
-      width: 42px;
-      height: 42px;
-      background-color: #8b5e3c;
-      color: white;
-      border-radius: 50%;
+    .logo:visited {
+      color: #2f2924;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 60px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
       display: flex;
-      align-items: center;
-      justify-content: center;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-main {
+      color: #c9181f;
+      font-size: 25px;
       font-weight: bold;
+    }
+
+    .brand-sub {
+      color: #5c3b24;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0;
+      margin-top: 4px;
+      text-transform: uppercase;
     }
 
     .nav-links a {
@@ -52,6 +72,49 @@
 
     .nav-links a:hover {
       color: #8b5e3c;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-search {
+      background-color: #f8f5f0;
+      border: 1px solid #e4ded5;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      width: 230px;
+    }
+
+    .nav-search svg {
+      width: 18px;
+      height: 18px;
+      color: #8b5e3c;
+      flex: 0 0 auto;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .nav-search input {
+      background: transparent;
+      border: 0;
+      color: #333;
+      flex: 1;
+      font-size: 14px;
+      min-width: 0;
+      outline: 0;
+    }
+
+    .nav-search input::placeholder {
+      color: #9a9086;
     }
 
     .page-title {
@@ -150,8 +213,20 @@
         padding: 18px 24px;
       }
 
+      .nav-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+      }
+
       .nav-links a {
         margin: 0 18px 0 0;
+      }
+
+      .nav-search {
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .contact-section {
@@ -169,15 +244,28 @@
 <body>
 
   <div class="navbar">
-    <div class="logo">
-      <div class="logo-circle">BB</div>
-      <span>Ban Cheong HardWare Machinery Supply</span>
-    </div>
+    <a class="logo" href="index.html" aria-label="Ban Cheong Hardware Machinery Supply home">
+      <img class="logo-mark" src="images/logo-clean.png" alt="Ban Cheong logo">
+      <span class="brand-text">
+        <span class="brand-main">Ban Cheong</span>
+        <span class="brand-sub">Hardware Machinery Supply</span>
+      </span>
+    </a>
 
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="index.html#products">Products</a>
-      <a href="contact.html">Contact</a>
+    <div class="nav-actions">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <form class="nav-search" action="products.html" method="get">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="M16.5 16.5L21 21"></path>
+        </svg>
+        <input name="search" type="search" placeholder="Search products">
+      </form>
     </div>
   </div>
 
@@ -222,7 +310,7 @@
   </div>
 
   <div class="footer">
-    <p>© 2026 Ban Cheong HardWare. All rights reserved.</p>
+    <p>© 2026 Ban Cheong Hardware. All rights reserved.</p>
   </div>
 
 </body>
