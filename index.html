@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ban Cheong Hardware Machinery Supply</title>
+  <link rel="icon" href="images/logo-mark.png">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f5f0;
+      margin: 0;
+      color: #333;
+    }
+
+    .navbar {
+      background-color: white;
+      padding: 18px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #2f2924;
+      text-decoration: none;
+    }
+
+    .logo:visited {
+      color: #2f2924;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 60px;
+      object-fit: contain;
+      flex: 0 0 auto;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-main {
+      color: #c9181f;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .brand-sub {
+      color: #5c3b24;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0;
+      margin-top: 4px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 24px;
+      font-size: 15px;
+    }
+
+    .nav-links a:hover {
+      color: #8b5e3c;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-search {
+      background-color: #f8f5f0;
+      border: 1px solid #e4ded5;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      width: 230px;
+    }
+
+    .nav-search svg {
+      width: 18px;
+      height: 18px;
+      color: #8b5e3c;
+      flex: 0 0 auto;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .nav-search input {
+      background: transparent;
+      border: 0;
+      color: #333;
+      flex: 1;
+      font-size: 14px;
+      min-width: 0;
+      outline: 0;
+    }
+
+    .nav-search input::placeholder {
+      color: #9a9086;
+    }
+
+    .hero {
+      background:
+        url("images/storefront.png") center top / 100% auto no-repeat,
+        linear-gradient(to bottom, #5c3b24, #8b5e3c);
+      min-height: 500px;
+      padding: 350px 20px 56px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: 44px;
+      margin: 0 0 14px;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero p {
+      color: white;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0 auto 28px;
+      max-width: 680px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+    }
+
+    .button {
+      background-color: #8b5e3c;
+      border-radius: 8px;
+      color: white;
+      display: inline-block;
+      font-weight: bold;
+      padding: 13px 22px;
+      text-decoration: none;
+    }
+
+    .button.secondary {
+      background-color: white;
+      color: #5c3b24;
+      margin-left: 10px;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 58px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      color: #5c3b24;
+      font-size: 30px;
+      margin: 0 0 22px;
+      text-align: center;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .category {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      color: #333;
+      padding: 24px 18px;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .category strong {
+      color: #5c3b24;
+      display: block;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .category span {
+      color: #777;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .why-us {
+      background-color: white;
+      border-radius: 8px;
+      border: 1px solid #e8e0d8;
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      overflow: hidden;
+    }
+
+    .why-item {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px 26px;
+      text-align: left;
+    }
+
+    .why-item + .why-item {
+      border-left: 1px solid #e8e0d8;
+    }
+
+    .why-icon {
+      width: 54px;
+      height: 54px;
+      border: 3px solid #e6ebef;
+      border-radius: 50%;
+      color: #66717a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 54px;
+    }
+
+    .why-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: currentColor;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .why-item h3 {
+      color: #2f2924;
+      font-size: 13px;
+      margin: 0 0 6px;
+      text-transform: uppercase;
+    }
+
+    .why-item p {
+      color: #666;
+      font-size: 13px;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .contact-strip {
+      background-color: #5c3b24;
+      color: white;
+      padding: 42px 20px;
+      text-align: center;
+    }
+
+    .contact-strip h2 {
+      font-size: 28px;
+      margin: 0 0 12px;
+    }
+
+    .contact-strip p {
+      margin: 0 0 22px;
+    }
+
+    .contact-strip .button {
+      background-color: white;
+      color: #5c3b24;
+    }
+
+    .footer {
+      background-color: #5c3b24;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+
+    @media (max-width: 800px) {
+      .navbar {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+        padding: 18px 24px;
+      }
+
+      .nav-actions {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+        width: 100%;
+      }
+
+      .nav-links a {
+        margin: 0 18px 0 0;
+      }
+
+      .nav-search {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .categories,
+      .why-us {
+        grid-template-columns: 1fr;
+      }
+
+      .why-item + .why-item {
+        border-left: 0;
+        border-top: 1px solid #e8e0d8;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero {
+        min-height: 460px;
+        padding-top: 230px;
+      }
+
+      .button.secondary {
+        margin: 12px 0 0;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="navbar">
+    <a class="logo" href="index.html" aria-label="Ban Cheong Hardware Machinery Supply home">
+      <img class="logo-mark" src="images/logo-clean.png" alt="Ban Cheong logo">
+      <span class="brand-text">
+        <span class="brand-main">Ban Cheong</span>
+        <span class="brand-sub">Hardware Machinery Supply</span>
+      </span>
+    </a>
+
+    <div class="nav-actions">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+      </div>
+
+      <form class="nav-search" action="products.html" method="get">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="M16.5 16.5L21 21"></path>
+        </svg>
+        <input name="search" type="search" placeholder="Search products">
+      </form>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Your Trusted Hardware Partner</h1>
+    <p>Hardware, machinery, cleaning materials, safety gloves, batteries, ladders, and trolleys for homes, worksites, and businesses in Singapore.</p>
+    <a class="button" href="products.html">View Products</a>
+    <a class="button secondary" href="contact.html">Contact Us</a>
+  </div>
+
+  <div class="section">
+    <h2>Shop By Category</h2>
+
+    <div class="categories">
+      <a class="category" href="products.html#gloves">
+        <strong>Gloves</strong>
+        
+      </a>
+
+      <a class="category" href="products.html#batteries">
+        <strong>Batteries</strong>
+        
+      </a>
+
+      <a class="category" href="products.html#ladders">
+        <strong>Ladders &amp; Trolleys</strong>
+       
+      </a>
+
+      <a class="category" href="products.html#cleaning-materials">
+        <strong>Cleaning Materials</strong>
+        
+      </a>
+
+      <a class="category" href="products.html#mask">
+        <strong>Mask</strong>
+      </a>
+
+      <a class="category" href="products.html#Hardware-tools">
+        <strong>Hardware Tools</strong>
+      </a>
+
+      <a class="category" href="products.html#racks">
+        <strong>Metal Shelves &amp; Racks</strong>
+      </a>
+
+
+
+
+
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Why Choose Us</h2>
+
+    <div class="why-us">
+      <div class="why-item">
+        <div class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3l7 3v5c0 5-3.1 8.2-7 10-3.9-1.8-7-5-7-10V6l7-3z"></path>
+            <path d="M9 12l2 2 4-5"></path>
+          </svg>
+        </div>
+        <div>
+          <h3>Quality Products</h3>
+          <p>We offer hardware and supplies that meet everyday site and maintenance needs.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M8.8 12.2L7 21l5-3 5 3-1.8-8.8"></path>
+          </svg>
+        </div>
+        <div>
+          <h3>Trusted Brands</h3>
+          <p>We source from reliable suppliers so your business can stay prepared.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 7h11v10H3z"></path>
+            <path d="M14 10h4l3 3v4h-7z"></path>
+            <circle cx="7" cy="18" r="2"></circle>
+            <circle cx="18" cy="18" r="2"></circle>
+          </svg>
+        </div>
+        <div>
+          <h3>Fast Delivery</h3>
+          <p>Quick local delivery options help keep jobs on schedule.</p>
+        </div>
+      </div>
+
+      <div class="why-item">
+        <div class="why-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path d="M4 12a8 8 0 0 1 16 0"></path>
+            <path d="M4 12v4a2 2 0 0 0 2 2h2v-6H4z"></path>
+            <path d="M20 12v4a2 2 0 0 1-2 2h-2v-6h4z"></path>
+            <path d="M9 19c1 1 5 1 6 0"></path>
+          </svg>
+        </div>
+        <div>
+          <h3>Friendly Service</h3>
+          <p>Our team can help you find the right product for the job.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="contact-strip">
+    <h2>Need Help Finding A Product?</h2>
+    <p>Reach out with the item number or product name and we will help you check.</p>
+    <a class="button" href="contact.html">Get In Touch</a>
+  </div>
+
+  <div class="footer">
+    <p>Copyright 2026 © Ban Cheong Hardware Machinery Supply Reg no 47030000X.</p>
+  </div>
+
+</body>
+</html>
