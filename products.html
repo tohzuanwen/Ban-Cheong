@@ -491,8 +491,59 @@
     }
 
     @media (max-width: 560px) {
+      .category-section {
+        padding: 0 10px;
+      }
+
       .products {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .product {
+        padding: 8px;
+      }
+
+      .product-image {
+        height: 100px;
+        margin-bottom: 8px;
+      }
+
+      .product h2 {
+        font-size: 12px;
+        line-height: 1.2;
+        margin-bottom: 5px;
+      }
+
+      .product h2 + h2,
+      .product p {
+        font-size: 11px;
+        line-height: 1.25;
+      }
+
+      .product p {
+        margin-bottom: 4px;
+      }
+
+      .carousel-button {
+        font-size: 16px;
+        height: 26px;
+        width: 26px;
+      }
+
+      .carousel-button.previous {
+        left: 5px;
+      }
+
+      .carousel-button.next {
+        right: 5px;
+      }
+
+      .carousel-count {
+        bottom: 5px;
+        font-size: 10px;
+        padding: 3px 6px;
+        right: 5px;
       }
 
       .hero h1 {
