@@ -163,6 +163,17 @@
       margin-left: 10px;
     }
 
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .hero-actions .button.secondary {
+      margin-left: 0;
+    }
+
     .section {
       max-width: 1000px;
       margin: 58px auto;
@@ -339,6 +350,10 @@
         margin: 12px 0 0;
       }
 
+      .hero-actions .button.secondary {
+        margin: 0;
+      }
+
     }
   </style>
 </head>
@@ -374,8 +389,10 @@
   <div class="hero">
     <h1>Your Trusted Hardware Partner</h1>
     <p>Hardware, machinery, cleaning materials, safety gloves, batteries, ladders, and trolleys for homes, worksites, and businesses in Singapore.</p>
-    <a class="button" href="products.html">View Products</a>
-    <a class="button secondary" href="contact.html">Contact Us</a>
+    <div class="hero-actions">
+      <a class="button" href="products.html">View Products</a>
+      <a class="button secondary" href="contact.html">Contact Us</a>
+    </div>
   </div>
 
   <div class="section">
