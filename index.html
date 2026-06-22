@@ -217,10 +217,19 @@
       box-sizing: border-box;
       color: #333;
       flex: 0 0 calc((100% - 54px) / 4);
-      padding: 24px 18px;
+      overflow: hidden;
+      padding: 0 0 24px;
       scroll-snap-align: start;
       text-align: center;
       text-decoration: none;
+    }
+
+    .category-image {
+      display: block;
+      height: 150px;
+      margin-bottom: 20px;
+      object-fit: cover;
+      width: 100%;
     }
 
     .category-slider-button {
@@ -472,34 +481,41 @@
       <button class="category-slider-button previous" type="button" aria-label="Previous categories">&#8249;</button>
       <div class="categories">
       <a class="category" href="products.html#gloves">
+        <img class="category-image" src="images%202/gloves/product1.jpg" alt="Protective gloves" loading="lazy" decoding="async">
         <strong>Gloves</strong>
         
       </a>
 
       <a class="category" href="products.html#batteries">
+        <img class="category-image" src="images%202/battery/product8.jpg" alt="Batteries" loading="lazy" decoding="async">
         <strong>Batteries</strong>
         
       </a>
 
       <a class="category" href="products.html#ladders">
+        <img class="category-image" src="images%202/ladder:trolleys/product1.jpg" alt="Ladders and trolleys" loading="lazy" decoding="async">
         <strong>Ladders &amp; Trolleys</strong>
        
       </a>
 
       <a class="category" href="products.html#cleaning-materials">
+        <img class="category-image" src="images%202/cleaning%20materials/product1.jpg" alt="Cleaning materials" loading="lazy" decoding="async">
         <strong>Cleaning Materials</strong>
         
       </a>
 
       <a class="category" href="products.html#mask">
+        <img class="category-image" src="images%202/mask/product1.jpg" alt="Protective mask" loading="lazy" decoding="async">
         <strong>Mask</strong>
       </a>
 
       <a class="category" href="products.html#Hardware-tools">
+        <img class="category-image" src="images%202/hardware%20tools/product1.jpg" alt="Hardware tools" loading="lazy" decoding="async">
         <strong>Hardware Tools</strong>
       </a>
 
       <a class="category" href="products.html#racks">
+        <img class="category-image" src="images%202/metal%20shelves:racks/product1.jpg" alt="Metal shelves and racks" loading="lazy" decoding="async">
         <strong>Metal Shelves &amp; Racks</strong>
       </a>
       </div>
