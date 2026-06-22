@@ -192,20 +192,68 @@
       text-align: center;
     }
 
+    .category-slider {
+      position: relative;
+    }
+
     .categories {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      display: flex;
       gap: 18px;
+      overflow-x: auto;
+      padding: 8px 4px 16px;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .categories::-webkit-scrollbar {
+      display: none;
     }
 
     .category {
       background-color: white;
       border-radius: 8px;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      box-sizing: border-box;
       color: #333;
+      flex: 0 0 calc((100% - 54px) / 4);
       padding: 24px 18px;
+      scroll-snap-align: start;
       text-align: center;
       text-decoration: none;
+    }
+
+    .category-slider-button {
+      background-color: #5c3b24;
+      border: 0;
+      border-radius: 50%;
+      color: white;
+      cursor: pointer;
+      font-size: 30px;
+      height: 44px;
+      line-height: 1;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      z-index: 2;
+    }
+
+    .category-slider-button:hover {
+      background-color: #8b5e3c;
+    }
+
+    .category-slider-button:disabled {
+      cursor: default;
+      opacity: 0.3;
+    }
+
+    .category-slider-button.previous {
+      left: -22px;
+    }
+
+    .category-slider-button.next {
+      right: -22px;
     }
 
     .category strong {
@@ -332,9 +380,20 @@
         box-sizing: border-box;
       }
 
-      .categories,
       .why-us {
         grid-template-columns: 1fr;
+      }
+
+      .category {
+        flex-basis: calc((100% - 18px) / 2);
+      }
+
+      .category-slider-button.previous {
+        left: -10px;
+      }
+
+      .category-slider-button.next {
+        right: -10px;
       }
 
       .why-item + .why-item {
@@ -359,6 +418,12 @@
         margin: 0;
       }
 
+    }
+
+    @media (max-width: 500px) {
+      .category {
+        flex-basis: 100%;
+      }
     }
   </style>
 </head>
@@ -403,7 +468,9 @@
   <div class="section">
     <h2>Shop By Category</h2>
 
-    <div class="categories">
+    <div class="category-slider" data-category-slider>
+      <button class="category-slider-button previous" type="button" aria-label="Previous categories">&#8249;</button>
+      <div class="categories">
       <a class="category" href="products.html#gloves">
         <strong>Gloves</strong>
         
@@ -435,11 +502,8 @@
       <a class="category" href="products.html#racks">
         <strong>Metal Shelves &amp; Racks</strong>
       </a>
-
-
-
-
-
+      </div>
+      <button class="category-slider-button next" type="button" aria-label="Next categories">&#8250;</button>
     </div>
   </div>
 
@@ -514,6 +578,35 @@
   <div class="footer">
     <p>Copyright 2026 © Ban Cheong Hardware Machinery Supply Reg no 47030000X.</p>
   </div>
+
+  <script>
+    document.querySelectorAll("[data-category-slider]").forEach((slider) => {
+      const track = slider.querySelector(".categories");
+      const previous = slider.querySelector(".previous");
+      const next = slider.querySelector(".next");
+
+      const updateButtons = () => {
+        const end = track.scrollWidth - track.clientWidth;
+        previous.disabled = track.scrollLeft <= 1;
+        next.disabled = track.scrollLeft >= end - 1;
+      };
+
+      const slide = (direction) => {
+        const card = track.querySelector(".category");
+        const gap = parseFloat(getComputedStyle(track).gap) || 0;
+        track.scrollBy({
+          left: direction * (card.getBoundingClientRect().width + gap),
+          behavior: "smooth"
+        });
+      };
+
+      previous.addEventListener("click", () => slide(-1));
+      next.addEventListener("click", () => slide(1));
+      track.addEventListener("scroll", updateButtons, { passive: true });
+      window.addEventListener("resize", updateButtons);
+      updateButtons();
+    });
+  </script>
 
 </body>
 </html>
