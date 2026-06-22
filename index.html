@@ -120,16 +120,59 @@
 
     .hero {
       box-sizing: border-box;
+      background-color: #5c3b24;
+      min-height: 560px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-track {
+      min-height: inherit;
+      position: relative;
+    }
+
+    .hero-slide {
+      align-items: center;
       background:
         linear-gradient(rgba(55, 34, 21, 0.52), rgba(55, 34, 21, 0.72)),
-        url("images%202/storefront.png") center / cover no-repeat;
-      min-height: 560px;
-      padding: 80px 20px;
-      text-align: center;
+        var(--hero-image) center / cover no-repeat;
       display: flex;
       flex-direction: column;
-      align-items: center;
       justify-content: center;
+      inset: 0;
+      min-height: inherit;
+      opacity: 0;
+      padding: 80px 70px;
+      pointer-events: none;
+      position: absolute;
+      text-align: center;
+      transition: opacity 0.7s ease;
+    }
+
+    .hero-slide.is-active {
+      opacity: 1;
+      pointer-events: auto;
+      z-index: 1;
+    }
+
+    .hero-slide.product-banner {
+      align-items: flex-start;
+      background:
+        var(--hero-image) right center / 48% auto no-repeat,
+        linear-gradient(110deg, #3d2618 0%, #6f472e 58%, #f1e8dd 100%);
+      text-align: left;
+    }
+
+    .hero-content {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      max-width: 820px;
+    }
+
+    .product-banner .hero-content {
+      align-items: flex-start;
+      max-width: 510px;
     }
 
     .hero h1 {
@@ -178,6 +221,54 @@
 
     .hero-actions .button.secondary {
       margin-left: 0;
+    }
+
+    .hero-carousel-button {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 0;
+      border-radius: 50%;
+      color: #5c3b24;
+      cursor: pointer;
+      font-size: 32px;
+      height: 48px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      z-index: 3;
+    }
+
+    .hero-carousel-button.previous {
+      left: 20px;
+    }
+
+    .hero-carousel-button.next {
+      right: 20px;
+    }
+
+    .hero-dots {
+      bottom: 22px;
+      display: flex;
+      gap: 9px;
+      left: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      z-index: 3;
+    }
+
+    .hero-dot {
+      background-color: rgba(255, 255, 255, 0.55);
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      height: 11px;
+      padding: 0;
+      width: 11px;
+    }
+
+    .hero-dot.is-active {
+      background-color: white;
+      transform: scale(1.2);
     }
 
     .section {
@@ -420,7 +511,35 @@
 
       .hero {
         min-height: 480px;
-        padding: 60px 20px;
+      }
+
+      .hero-slide {
+        padding: 60px 54px;
+      }
+
+      .hero-slide.product-banner {
+        align-items: center;
+        background:
+          linear-gradient(rgba(55, 34, 21, 0.62), rgba(55, 34, 21, 0.78)),
+          var(--hero-image) center / cover no-repeat;
+        text-align: center;
+      }
+
+      .product-banner .hero-content {
+        align-items: center;
+      }
+
+      .hero-carousel-button {
+        height: 40px;
+        width: 40px;
+      }
+
+      .hero-carousel-button.previous {
+        left: 8px;
+      }
+
+      .hero-carousel-button.next {
+        right: 8px;
       }
 
       .button.secondary {
@@ -469,14 +588,44 @@
     </div>
   </div>
 
-  <div class="hero">
-    <h1>Your Trusted Hardware Partner</h1>
-    <p>Hardware, machinery, cleaning materials, safety gloves, batteries, ladders, and trolleys for homes, worksites, and businesses in Singapore.</p>
-    <div class="hero-actions">
-      <a class="button" href="products.html">View Products</a>
-      <a class="button secondary" href="contact.html">Contact Us</a>
+  <section class="hero" data-hero-carousel aria-label="Featured banners">
+    <div class="hero-track">
+      <article class="hero-slide is-active" style="--hero-image: url('images%202/storefront.png')">
+        <div class="hero-content">
+          <h1>Your Trusted Hardware Partner</h1>
+          <p>Hardware, machinery, cleaning materials, safety gloves, batteries, ladders, and trolleys for homes, worksites, and businesses in Singapore.</p>
+          <div class="hero-actions">
+            <a class="button" href="products.html">View Products</a>
+            <a class="button secondary" href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero-slide product-banner" style="--hero-image: url('images%202/hardware%20tools/product10.jpg')">
+        <div class="hero-content">
+          <h1>Safety &amp; Hardware Essentials</h1>
+          <p>Dependable equipment and protective supplies for workshops, worksites, and everyday maintenance.</p>
+          <div class="hero-actions">
+            <a class="button" href="products.html#Hardware-tools">Shop Hardware</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="hero-slide product-banner" style="--hero-image: url('images%202/ladder:trolleys/product1.jpg')">
+        <div class="hero-content">
+          <h1>Keep Every Job Moving</h1>
+          <p>Explore practical ladders and trolleys for transporting materials safely and efficiently.</p>
+          <div class="hero-actions">
+            <a class="button" href="products.html#ladders">View Equipment</a>
+          </div>
+        </div>
+      </article>
     </div>
-  </div>
+
+    <button class="hero-carousel-button previous" type="button" aria-label="Previous banner">&#8249;</button>
+    <button class="hero-carousel-button next" type="button" aria-label="Next banner">&#8250;</button>
+    <div class="hero-dots" aria-label="Choose a banner"></div>
+  </section>
 
   <div class="section">
     <h2>Shop By Category</h2>
@@ -600,6 +749,55 @@
   </div>
 
   <script>
+    document.querySelectorAll("[data-hero-carousel]").forEach((carousel) => {
+      const slides = Array.from(carousel.querySelectorAll(".hero-slide"));
+      const previous = carousel.querySelector(".hero-carousel-button.previous");
+      const next = carousel.querySelector(".hero-carousel-button.next");
+      const dotsContainer = carousel.querySelector(".hero-dots");
+      let current = 0;
+      let timer;
+      let touchStartX = 0;
+
+      const dots = slides.map((slide, index) => {
+        const dot = document.createElement("button");
+        dot.className = `hero-dot${index === 0 ? " is-active" : ""}`;
+        dot.type = "button";
+        dot.setAttribute("aria-label", `Show banner ${index + 1}`);
+        dot.addEventListener("click", () => show(index, true));
+        dotsContainer.appendChild(dot);
+        return dot;
+      });
+
+      const show = (index, restart = false) => {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle("is-active", slideIndex === current);
+          slide.setAttribute("aria-hidden", slideIndex === current ? "false" : "true");
+          dots[slideIndex].classList.toggle("is-active", slideIndex === current);
+        });
+        if (restart) start();
+      };
+
+      const start = () => {
+        window.clearInterval(timer);
+        timer = window.setInterval(() => show(current + 1), 5000);
+      };
+
+      previous.addEventListener("click", () => show(current - 1, true));
+      next.addEventListener("click", () => show(current + 1, true));
+      carousel.addEventListener("touchstart", (event) => {
+        touchStartX = event.changedTouches[0].clientX;
+      }, { passive: true });
+      carousel.addEventListener("touchend", (event) => {
+        const distance = event.changedTouches[0].clientX - touchStartX;
+        if (Math.abs(distance) > 50) show(current + (distance < 0 ? 1 : -1), true);
+      }, { passive: true });
+      carousel.addEventListener("mouseenter", () => window.clearInterval(timer));
+      carousel.addEventListener("mouseleave", start);
+      show(0);
+      start();
+    });
+
     document.querySelectorAll("[data-category-slider]").forEach((slider) => {
       const track = slider.querySelector(".categories");
       const previous = slider.querySelector(".previous");
