@@ -234,6 +234,38 @@
       position: absolute;
     }
 
+    .hero-banner-hotspots {
+      aspect-ratio: 2172 / 724;
+      left: 50%;
+      max-height: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: min(100%, 1410px);
+    }
+
+    .banner-hotspot {
+      border-radius: 7px;
+      height: 10.6%;
+      position: absolute;
+      top: 62%;
+    }
+
+    .banner-hotspot.view-products {
+      left: 4.7%;
+      width: 14.3%;
+    }
+
+    .banner-hotspot.contact-us {
+      left: 20.25%;
+      width: 12.9%;
+    }
+
+    .banner-hotspot:focus-visible {
+      outline: 3px solid white;
+      outline-offset: 3px;
+    }
+
     .hero-carousel-button {
       align-items: center;
       background: rgba(255, 255, 255, 0.9);
@@ -786,7 +818,12 @@
   <main>
     <section class="hero" data-hero-carousel aria-label="Featured banners">
       <div class="hero-track">
-        <article class="hero-slide is-active" style="--hero-image: url('images%202/banners/reliable-hardware-banner.png')" aria-label="Reliable hardware and industrial supplies"></article>
+        <article class="hero-slide is-active" style="--hero-image: url('images%202/banners/reliable-hardware-banner.png')" aria-label="Reliable hardware and industrial supplies">
+          <div class="hero-banner-hotspots">
+            <a class="banner-hotspot view-products" href="products.html" aria-label="View Products"></a>
+            <a class="banner-hotspot contact-us" href="contact.html" aria-label="Contact Us"></a>
+          </div>
+        </article>
 
         <article class="hero-slide" style="--hero-image: url('images%202/banners/gp-batteries-banner.png')">
           <a class="hero-banner-link" href="products.html#batteries" aria-label="Shop GP Batteries"></a>
