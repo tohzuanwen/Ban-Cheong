@@ -198,21 +198,22 @@
     }
 
     .hero {
+      aspect-ratio: 3 / 1;
       background: #111;
-      min-height: 470px;
+      height: auto;
+      min-height: 300px;
       overflow: hidden;
       position: relative;
     }
 
     .hero-track {
-      min-height: inherit;
+      height: 100%;
       position: relative;
     }
 
     .hero-slide {
-      background: #111 var(--hero-image) center / contain no-repeat;
+      background: #111 var(--hero-image) center / cover no-repeat;
       inset: 0;
-      min-height: inherit;
       opacity: 0;
       pointer-events: none;
       position: absolute;
@@ -236,12 +237,12 @@
 
     .hero-banner-hotspots {
       aspect-ratio: 2172 / 724;
+      height: 100%;
       left: 50%;
-      max-height: 100%;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
-      width: min(100%, 1410px);
+      width: auto;
     }
 
     .banner-hotspot {
@@ -685,7 +686,9 @@
       }
 
       .hero {
-        min-height: 300px;
+        aspect-ratio: auto;
+        height: 300px;
+        min-height: 0;
       }
 
       .hero-carousel-button {
@@ -756,7 +759,8 @@
       }
 
       .hero {
-        min-height: 235px;
+        height: 235px;
+        min-height: 0;
       }
 
       .category-grid,
