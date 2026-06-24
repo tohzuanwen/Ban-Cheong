@@ -167,6 +167,10 @@
       background: #111 var(--hero-image) center / contain no-repeat;
     }
 
+    .hero-slide.signboard-banner {
+      background-color: white;
+    }
+
     .hero-banner-link {
       inset: 0;
       position: absolute;
@@ -182,13 +186,6 @@
     .product-banner .hero-content {
       align-items: flex-start;
       max-width: 510px;
-    }
-
-    .hero-company-logo {
-      height: auto;
-      margin-bottom: 24px;
-      max-width: 430px;
-      width: 100%;
     }
 
     .hero h1 {
@@ -545,10 +542,6 @@
         align-items: center;
       }
 
-      .hero-company-logo {
-        max-width: 360px;
-      }
-
       .hero-carousel-button {
         height: 40px;
         width: 40px;
@@ -610,9 +603,10 @@
 
   <section class="hero" data-hero-carousel aria-label="Featured banners">
     <div class="hero-track">
-      <article class="hero-slide product-banner is-active" style="--hero-image: url('images%202/hardware%20tools/product10.jpg')">
+      <article class="hero-slide artwork-banner signboard-banner is-active" style="--hero-image: url('images%202/storefront.png')" aria-label="Ban Cheong Hardware Machinery Supply"></article>
+
+      <article class="hero-slide product-banner" style="--hero-image: url('images%202/hardware%20tools/product10.jpg')">
         <div class="hero-content">
-          <img class="hero-company-logo" src="images%202/storefront.png" alt="Ban Cheong Hardware Machinery Supply">
           <h1>Safety &amp; Hardware Essentials</h1>
           <p>Dependable equipment and protective supplies for workshops, worksites, and everyday maintenance.</p>
           <div class="hero-actions">
