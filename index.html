@@ -201,7 +201,7 @@
       aspect-ratio: 3 / 1;
       background: #111;
       height: auto;
-      min-height: 300px;
+      min-height: 0;
       overflow: hidden;
       position: relative;
     }
@@ -212,7 +212,7 @@
     }
 
     .hero-slide {
-      background: #111 var(--hero-image) center / cover no-repeat;
+      background: #111 var(--hero-image) center / 100% 100% no-repeat;
       inset: 0;
       opacity: 0;
       pointer-events: none;
@@ -224,35 +224,6 @@
       opacity: 1;
       pointer-events: auto;
       z-index: 1;
-    }
-
-    .hero-slide.contain-banner {
-      background: #111;
-      isolation: isolate;
-      overflow: hidden;
-    }
-
-    .hero-slide.contain-banner::before {
-      background: var(--hero-image) center / cover no-repeat;
-      content: "";
-      filter: blur(22px);
-      inset: -32px;
-      opacity: 0.48;
-      position: absolute;
-      transform: scale(1.05);
-      z-index: 0;
-    }
-
-    .hero-slide.contain-banner::after {
-      background: var(--hero-image) center / contain no-repeat;
-      content: "";
-      inset: 0;
-      position: absolute;
-      z-index: 1;
-    }
-
-    .hero-slide.contain-banner .hero-banner-link {
-      z-index: 2;
     }
 
     .hero-slide.signboard-banner {
@@ -715,8 +686,8 @@
       }
 
       .hero {
-        aspect-ratio: auto;
-        height: 300px;
+        aspect-ratio: 3 / 1;
+        height: auto;
         min-height: 0;
       }
 
@@ -788,7 +759,7 @@
       }
 
       .hero {
-        height: 235px;
+        height: auto;
         min-height: 0;
       }
 
