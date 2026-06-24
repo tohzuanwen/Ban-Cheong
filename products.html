@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Products | Ban Cheong Hardware Machinery Supply</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="images%202/logo-mark.png">
@@ -516,56 +517,777 @@
       margin-top: 40px;
     }
   </style>
+  <style>
+    :root {
+      --gold: #bd8523;
+      --gold-dark: #966615;
+      --ink: #1e1e1e;
+      --muted: #66625d;
+      --paper: #fbfaf7;
+      --cream: #f4eee3;
+      --line: #e3ddd4;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+      margin: 0 auto;
+      max-width: 1240px;
+      padding: 0 28px;
+      width: 100%;
+    }
+
+    .navbar {
+      align-items: center;
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid #eee;
+      box-shadow: none;
+      display: flex;
+      gap: 34px;
+      justify-content: space-between;
+      min-height: 82px;
+      padding: 12px max(28px, calc((100vw - 1240px) / 2 + 28px));
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .logo {
+      align-items: center;
+      color: var(--ink);
+      display: flex;
+      flex: 0 0 auto;
+      gap: 11px;
+      text-decoration: none;
+    }
+
+    .brand-badge {
+      align-items: center;
+      background: linear-gradient(145deg, #d7a645, #8f6119);
+      border: 3px solid #e4bd68;
+      box-shadow: inset 0 0 0 2px #78500f;
+      clip-path: polygon(50% 0, 94% 24%, 94% 76%, 50% 100%, 6% 76%, 6% 24%);
+      color: white;
+      display: flex;
+      font-size: 19px;
+      font-weight: 800;
+      height: 48px;
+      justify-content: center;
+      letter-spacing: -1px;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
+      width: 48px;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.02;
+    }
+
+    .brand-main {
+      color: var(--ink);
+      font-size: 23px;
+      font-weight: 800;
+    }
+
+    .brand-sub {
+      color: var(--ink);
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 5px;
+      text-transform: none;
+    }
+
+    .nav-links {
+      align-items: center;
+      display: flex;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: var(--ink);
+      font-size: 14px;
+      margin: 0;
+      padding: 12px 0;
+      position: relative;
+      text-decoration: none;
+    }
+
+    .nav-links a::after {
+      background: var(--gold);
+      bottom: 4px;
+      content: "";
+      height: 2px;
+      left: 0;
+      position: absolute;
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+      width: 100%;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav-actions {
+      align-items: center;
+      display: flex;
+      gap: 16px;
+    }
+
+    .nav-search {
+      align-items: center;
+      background: white;
+      border: 1px solid #ddd8d0;
+      border-radius: 8px;
+      display: flex;
+      min-width: 250px;
+      padding: 10px 12px;
+      width: auto;
+    }
+
+    .nav-search input {
+      background: transparent;
+      border: 0;
+      flex: 1;
+      font-size: 13px;
+      min-width: 0;
+      outline: 0;
+    }
+
+    .nav-search svg {
+      color: var(--gold);
+      height: 18px;
+      order: 2;
+      width: 18px;
+    }
+
+    .call-button,
+    .button {
+      align-items: center;
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 7px;
+      color: white;
+      display: inline-flex;
+      font-size: 14px;
+      font-weight: 700;
+      gap: 8px;
+      justify-content: center;
+      padding: 12px 20px;
+      text-decoration: none;
+    }
+
+    .call-button:hover,
+    .button:hover {
+      background: var(--gold-dark);
+    }
+
+    .hero {
+      background:
+        linear-gradient(90deg, rgba(10, 10, 10, 0.94), rgba(10, 10, 10, 0.55)),
+        url('images%202/hardware%20tools/product2.jpg') right 42% / cover no-repeat;
+      color: white;
+      padding: 52px max(28px, calc((100vw - 1240px) / 2 + 28px));
+      text-align: left;
+    }
+
+    .breadcrumbs {
+      font-size: 13px;
+      margin: 0 0 20px;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: 42px;
+      margin: 0 0 10px;
+    }
+
+    .hero p {
+      color: #eee;
+      font-size: 16px;
+      line-height: 1.5;
+      margin: 0;
+      max-width: 520px;
+    }
+
+    .hero .breadcrumbs {
+      font-size: 13px;
+      margin: 0 0 20px;
+    }
+
+    .section-title {
+      color: var(--ink);
+      font-size: 30px;
+      margin: 42px 0 0;
+      text-align: center;
+    }
+
+    .catalog-tools {
+      margin: 26px auto 18px;
+      max-width: 1240px;
+      padding: 0 28px;
+    }
+
+    .product-search {
+      margin: 0;
+      max-width: none;
+      padding: 0;
+    }
+
+    .search-box {
+      background: white;
+      border: 1px solid #dcd6cd;
+      border-radius: 7px;
+      box-shadow: none;
+      padding: 11px 14px;
+    }
+
+    .search-box svg {
+      color: var(--gold);
+      height: 19px;
+      width: 19px;
+    }
+
+    .search-box input {
+      font-size: 14px;
+    }
+
+    .clear-search {
+      background: #f4efe7;
+      border-color: #e2d8c9;
+      color: var(--gold-dark);
+    }
+
+    .search-results {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 9px 0 0;
+      text-align: left;
+    }
+
+    .category-nav {
+      justify-content: flex-start;
+      margin: 0;
+      max-width: 1240px;
+      padding: 0 28px 22px;
+    }
+
+    .category-nav a {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--ink);
+      font-size: 13px;
+      padding: 10px 16px;
+    }
+
+    .category-nav a:first-child,
+    .category-nav a:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: white;
+    }
+
+    .catalog-layout {
+      align-items: start;
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 210px minmax(0, 1fr);
+      margin: 0 auto;
+      max-width: 1240px;
+      padding: 0 28px;
+    }
+
+    .catalog-sidebar {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 18px 14px;
+      position: sticky;
+      top: 102px;
+    }
+
+    .catalog-sidebar h2 {
+      font-size: 16px;
+      margin: 0 0 14px;
+      padding: 0 8px;
+    }
+
+    .sidebar-links {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .sidebar-links a {
+      border-left: 3px solid transparent;
+      border-radius: 0 5px 5px 0;
+      color: var(--ink);
+      font-size: 13px;
+      padding: 10px 9px;
+      text-decoration: none;
+    }
+
+    .sidebar-links a:first-child,
+    .sidebar-links a:hover {
+      background: #f7f0e5;
+      border-left-color: var(--gold);
+      color: var(--gold-dark);
+    }
+
+    .sidebar-note {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+      margin: 16px 8px 0;
+      padding-top: 16px;
+    }
+
+    .catalog-main {
+      min-width: 0;
+    }
+
+    .category-section {
+      margin: 0 0 42px;
+      max-width: none;
+      padding: 0;
+      scroll-margin-top: 105px;
+    }
+
+    .category-title {
+      border-bottom: 2px solid var(--gold);
+      color: var(--ink);
+      font-size: 20px;
+      margin: 0 0 16px;
+      padding: 0 0 10px;
+    }
+
+    .products {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      margin: 0;
+      padding: 0;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      box-shadow: none;
+      display: flex;
+      min-height: 100%;
+      padding: 13px;
+      text-align: left;
+      transition: box-shadow 0.2s ease, transform 0.2s ease;
+    }
+
+    .product:hover {
+      box-shadow: 0 8px 22px rgba(28, 24, 19, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .product-image {
+      background: #f4f2ee;
+      border-radius: 7px;
+      height: 190px;
+      margin-bottom: 13px;
+    }
+
+    .product-image img {
+      object-fit: contain;
+    }
+
+    .product h2 {
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.3;
+      margin: 0 0 7px;
+    }
+
+    .product h2:first-of-type::before {
+      color: var(--gold-dark);
+      content: "BAN CHEONG SUPPLY";
+      display: block;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      margin-bottom: 7px;
+    }
+
+    #gloves .product h2:first-of-type::before { content: "GLOVES"; }
+    #batteries .product h2:first-of-type::before { content: "BATTERIES"; }
+    #ladders .product h2:first-of-type::before { content: "LADDERS & TROLLEYS"; }
+    #cleaning-materials .product h2:first-of-type::before { content: "CLEANING MATERIALS"; }
+    #mask .product h2:first-of-type::before { content: "MASKS"; }
+    #hardware-tools .product h2:first-of-type::before { content: "HARDWARE TOOLS"; }
+    #racks .product h2:first-of-type::before { content: "SHELVES & RACKS"; }
+
+    .product h2 + h2 {
+      color: var(--ink);
+      font-size: 14px;
+      margin-top: 0;
+    }
+
+    .product p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .carousel-button,
+    .lightbox-close {
+      background: rgba(189, 133, 35, 0.94);
+      border-radius: 50%;
+    }
+
+    .carousel-count {
+      color: var(--gold-dark);
+    }
+
+    .no-results {
+      border-color: var(--line);
+      margin: 0 0 24px;
+      max-width: none;
+    }
+
+    .help-wrap {
+      margin: 18px auto 0;
+      max-width: 1240px;
+      padding: 0 28px;
+    }
+
+    .help-strip {
+      align-items: center;
+      background: linear-gradient(105deg, #eee5d5, #f9f5ee);
+      border: 1px solid #e2d8c8;
+      border-radius: 11px;
+      display: grid;
+      gap: 28px;
+      grid-template-columns: 1fr auto;
+      padding: 25px 32px;
+    }
+
+    .help-copy {
+      align-items: center;
+      display: flex;
+      gap: 18px;
+    }
+
+    .help-icon {
+      align-items: center;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      flex: 0 0 60px;
+      height: 60px;
+      justify-content: center;
+    }
+
+    .help-icon svg {
+      fill: none;
+      height: 30px;
+      stroke: var(--ink);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.8;
+      width: 30px;
+    }
+
+    .help-copy h2 {
+      font-size: 22px;
+      margin: 0 0 5px;
+    }
+
+    .help-copy p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    .help-actions {
+      display: flex;
+      gap: 12px;
+    }
+
+    .button.secondary {
+      background: transparent;
+      border-color: #6e665d;
+      color: var(--ink);
+    }
+
+    .site-footer {
+      background: #1d1d1d;
+      color: #eee;
+      margin-top: 46px;
+      padding: 42px 0 18px;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 34px;
+      grid-template-columns: 1.3fr 1fr 0.8fr 1fr;
+    }
+
+    .footer-brand .logo {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-brand .brand-main,
+    .footer-brand .brand-sub {
+      color: white;
+    }
+
+    .footer-brand p,
+    .footer-column p,
+    .footer-column a {
+      color: #c8c8c8;
+      font-size: 13px;
+      line-height: 1.65;
+      margin: 0;
+      text-decoration: none;
+    }
+
+    .footer-column {
+      border-left: 1px solid #4a4a4a;
+      padding-left: 28px;
+    }
+
+    .footer-column h3 {
+      color: white;
+      font-size: 15px;
+      margin: 0 0 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-column a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #755c2c;
+      color: #aaa;
+      font-size: 12px;
+      margin-top: 32px;
+      padding-top: 17px;
+      text-align: center;
+    }
+
+    .footer {
+      display: none;
+    }
+
+    @media (max-width: 1100px) {
+      .navbar {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container,
+      .catalog-tools,
+      .category-nav,
+      .catalog-layout,
+      .help-wrap {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      .navbar {
+        align-items: center;
+        flex-direction: row;
+        gap: 14px;
+        padding: 14px 18px;
+        position: relative;
+      }
+
+      .brand-main {
+        font-size: 19px;
+      }
+
+      .brand-sub {
+        font-size: 9px;
+      }
+
+      .nav-actions {
+        align-items: stretch;
+        flex-direction: row;
+        width: 100%;
+      }
+
+      .nav-search {
+        min-width: 0;
+        width: 100%;
+      }
+
+      .nav-links {
+        gap: 20px;
+        overflow-x: auto;
+      }
+
+      .hero {
+        padding: 42px 18px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .catalog-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .catalog-sidebar {
+        position: static;
+      }
+
+      .sidebar-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .sidebar-links a {
+        border: 1px solid var(--line);
+        border-radius: 5px;
+        padding: 8px 10px;
+      }
+
+      .sidebar-note {
+        display: none;
+      }
+
+      .help-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .help-actions {
+        flex-wrap: wrap;
+      }
+
+      .footer-column:nth-child(3) {
+        border-left: 0;
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .logo {
+        width: 100%;
+      }
+
+      .nav-actions {
+        flex-direction: column;
+      }
+
+      .call-button {
+        width: 100%;
+      }
+
+      .products,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        height: 230px;
+      }
+
+      .help-copy {
+        align-items: flex-start;
+      }
+
+      .footer-column {
+        border-left: 0;
+        border-top: 1px solid #4a4a4a;
+        padding: 23px 0 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <div class="navbar">
+  <header class="navbar">
     <a class="logo" href="index.html" aria-label="Ban Cheong Hardware Machinery Supply home">
-      <img class="logo-mark" src="images%202/logo-clean.png" alt="Ban Cheong logo">
+      <span class="brand-badge" aria-hidden="true">BC</span>
       <span class="brand-text">
         <span class="brand-main">Ban Cheong</span>
         <span class="brand-sub">Hardware Machinery Supply</span>
       </span>
     </a>
 
-    <div class="nav-actions">
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact</a>
-      </div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a class="active" href="products.html">Products</a>
+      <a href="index.html#categories">Categories</a>
+      <a href="index.html#about">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
 
+    <div class="nav-actions">
       <form class="nav-search" action="products.html" method="get">
+        <input name="search" type="search" placeholder="Search products..." aria-label="Search products">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="11" cy="11" r="7"></circle>
           <path d="M16.5 16.5L21 21"></path>
         </svg>
-        <input name="search" type="search" placeholder="Search products">
       </form>
+      <a class="call-button" href="tel:+6567458382">☎&nbsp; Call Us</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <p class="breadcrumbs"><a href="index.html">Home</a> / Products</p>
+    <h1>Our Products</h1>
+    <p>Browse our range of hardware, safety supplies, batteries, trolleys, ladders and cleaning essentials.</p>
+  </section>
+
+  <div class="catalog-tools" id="products">
+    <div class="product-search">
+      <label class="search-box" for="productSearch">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="M16.5 16.5L21 21"></path>
+        </svg>
+        <input id="productSearch" type="search" placeholder="Search products or item number">
+        <button class="clear-search" type="button" aria-label="Clear search">×</button>
+      </label>
+      <p class="search-results" id="searchResults">Showing all products</p>
     </div>
   </div>
 
-  <div class="hero">
-    <h1>Your Trusted Hardware Partner</h1>
-    <p>Quality tools, fittings, and supplies for every project.</p>
-  </div>
-
-  <h2 id="products" class="section-title">Our Products</h2>
-
-  <div class="product-search">
-    <label class="search-box" for="productSearch">
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <circle cx="11" cy="11" r="7"></circle>
-        <path d="M16.5 16.5L21 21"></path>
-      </svg>
-      <input id="productSearch" type="search" placeholder="Search products or item number">
-      <button class="clear-search" type="button" aria-label="Clear search">x</button>
-    </label>
-    <p class="search-results" id="searchResults">Showing all products</p>
-  </div>
-
   <div class="category-nav">
+    <a href="#products">All</a>
     <a href="#gloves">Gloves</a>
     <a href="#batteries">Batteries</a>
     <a href="#ladders">Ladders/Trolleys</a>
@@ -578,7 +1300,24 @@
 
   </div>
 
-  <div class="no-results" id="noResults">No products found. Try searching another product name or item number.</div>
+  <div class="catalog-layout">
+    <aside class="catalog-sidebar" aria-label="Product categories">
+      <h2>Categories</h2>
+      <nav class="sidebar-links">
+        <a href="#products">All Products</a>
+        <a href="#gloves">Gloves</a>
+        <a href="#batteries">Batteries</a>
+        <a href="#ladders">Ladders &amp; Trolleys</a>
+        <a href="#cleaning-materials">Cleaning Materials</a>
+        <a href="#mask">Masks</a>
+        <a href="#hardware-tools">Hardware Tools</a>
+        <a href="#racks">Metal Shelves &amp; Racks</a>
+      </nav>
+      <p class="sidebar-note">Need a quotation or cannot find an item? Contact our team with the product name or item number.</p>
+    </aside>
+
+    <main class="catalog-main">
+      <div class="no-results" id="noResults">No products found. Try searching another product name or item number.</div>
 
   <div id="gloves" class="category-section">
     <h3 class="category-title">Gloves</h3>
@@ -1021,10 +1760,68 @@
       </div>
     </div>
   </div>
+    </main>
+  </div>
 
-  <div class="footer">
-  <p>Copyright 2026 © Ban Cheong Hardware Machinery Supply Reg no 47030000X.</p>
-</div>
+  <section class="help-wrap">
+    <div class="help-strip">
+      <div class="help-copy">
+        <div class="help-icon">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4 12a8 8 0 0 1 16 0"></path>
+            <path d="M4 12v5h3v-5H4zM17 12v5h3v-5h-3z"></path>
+            <path d="M17 18c-1 2-3 3-5 3"></path>
+          </svg>
+        </div>
+        <div>
+          <h2>Need help finding a product?</h2>
+          <p>Our team can assist with product availability, item numbers and quotations.</p>
+        </div>
+      </div>
+      <div class="help-actions">
+        <a class="button" href="tel:+6567458382">Call 6745 8382</a>
+        <a class="button secondary" href="contact.html">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="index.html">
+            <span class="brand-badge" aria-hidden="true">BC</span>
+            <span class="brand-text">
+              <span class="brand-main">Ban Cheong</span>
+              <span class="brand-sub">Hardware Machinery Supply</span>
+            </span>
+          </a>
+          <p>Your reliable partner for hardware, machinery, cleaning materials and industrial supplies in Singapore.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p><a href="tel:+6567458382">☎ +65 6745 8382</a></p>
+          <p><a href="mailto:tony_bch@hotmail.com">✉ Tony_bch@hotmail.com</a></p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="index.html#categories">Categories</a>
+            <a href="index.html#about">About Us</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Business Hours</h3>
+          <p>Mon – Sat: 9:00am – 5:00pm</p>
+          <p>Sunday: 9:00am – 12:00pm</p>
+        </div>
+      </div>
+      <div class="footer-bottom">Copyright 2026 © Ban Cheong Hardware Machinery Supply · Reg no 47030000X.</div>
+    </div>
+  </footer>
 
 <div class="image-lightbox" id="imageLightbox" aria-hidden="true">
   <div class="lightbox-content" role="dialog" aria-modal="true" aria-label="Product image preview">
