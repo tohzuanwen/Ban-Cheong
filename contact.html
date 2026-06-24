@@ -1,318 +1,679 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact Us | Ban Cheong Hardware Machinery Supply</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Ban Cheong Hardware Machinery Supply in Singapore for product enquiries, availability and quotations.">
+  <title>Contact Us | Ban Cheong Hardware Machinery Supply</title>
   <link rel="icon" href="images%202/logo-mark.png">
 
   <style>
+    :root {
+      --gold: #bd8523;
+      --gold-dark: #966615;
+      --ink: #1e1e1e;
+      --muted: #66625d;
+      --paper: #fbfaf7;
+      --cream: #f4eee3;
+      --line: #e3ddd4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f8f5f0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      color: #333;
+    }
+
+    .container {
+      margin: 0 auto;
+      max-width: 1240px;
+      padding: 0 28px;
+      width: 100%;
     }
 
     .navbar {
-      background-color: white;
-      padding: 18px 50px;
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid #eee;
+      display: flex;
+      gap: 34px;
+      justify-content: space-between;
+      min-height: 82px;
+      padding: 12px max(28px, calc((100vw - 1240px) / 2 + 28px));
       position: sticky;
       top: 0;
+      z-index: 20;
     }
 
     .logo {
-      display: flex;
       align-items: center;
-      gap: 12px;
-      color: #2f2924;
+      color: var(--ink);
+      display: flex;
+      flex: 0 0 auto;
+      gap: 11px;
       text-decoration: none;
     }
 
-    .logo:visited {
-      color: #2f2924;
-    }
-
-    .logo-mark {
-      width: 44px;
-      height: 60px;
+    .company-logo-image {
+      display: block;
+      height: 58px;
       object-fit: contain;
-      flex: 0 0 auto;
+      width: 44px;
     }
 
     .brand-text {
       display: flex;
       flex-direction: column;
-      line-height: 1.05;
+      line-height: 1.02;
     }
 
     .brand-main {
-      color: #c9181f;
-      font-size: 25px;
-      font-weight: bold;
+      font-size: 23px;
+      font-weight: 800;
     }
 
     .brand-sub {
-      color: #5c3b24;
-      font-size: 12px;
-      font-weight: bold;
-      letter-spacing: 0;
-      margin-top: 4px;
-      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+    .nav-links {
+      align-items: center;
+      display: flex;
+      gap: 28px;
     }
 
     .nav-links a {
+      color: var(--ink);
+      font-size: 14px;
+      padding: 12px 0;
+      position: relative;
       text-decoration: none;
-      color: #333;
-      margin-left: 24px;
-      font-size: 15px;
     }
 
-    .nav-links a:hover {
-      color: #8b5e3c;
+    .nav-links a::after {
+      background: var(--gold);
+      bottom: 4px;
+      content: "";
+      height: 2px;
+      left: 0;
+      position: absolute;
+      transform: scaleX(0);
+      transition: transform 0.2s ease;
+      width: 100%;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      transform: scaleX(1);
     }
 
     .nav-actions {
-      display: flex;
       align-items: center;
-      gap: 22px;
+      display: flex;
+      gap: 16px;
     }
 
     .nav-search {
-      background-color: #f8f5f0;
-      border: 1px solid #e4ded5;
+      align-items: center;
+      border: 1px solid #ddd8d0;
       border-radius: 8px;
       display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 10px;
-      width: 230px;
-    }
-
-    .nav-search svg {
-      width: 18px;
-      height: 18px;
-      color: #8b5e3c;
-      flex: 0 0 auto;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+      min-width: 250px;
+      padding: 10px 12px;
     }
 
     .nav-search input {
-      background: transparent;
       border: 0;
-      color: #333;
       flex: 1;
-      font-size: 14px;
+      font-size: 13px;
       min-width: 0;
       outline: 0;
     }
 
-    .nav-search input::placeholder {
-      color: #9a9086;
+    .nav-search svg {
+      fill: none;
+      height: 18px;
+      stroke: var(--gold);
+      stroke-linecap: round;
+      stroke-width: 2;
+      width: 18px;
     }
 
-    .page-title {
-      text-align: center;
-      padding: 55px 20px 30px;
+    .call-button,
+    .button {
+      align-items: center;
+      background: var(--gold);
+      border: 1px solid var(--gold);
+      border-radius: 7px;
+      color: white;
+      display: inline-flex;
+      font-size: 14px;
+      font-weight: 700;
+      gap: 8px;
+      justify-content: center;
+      padding: 12px 20px;
+      text-decoration: none;
     }
 
-    .page-title h1 {
-      color: #5c3b24;
-      font-size: 38px;
+    .call-button:hover,
+    .button:hover {
+      background: var(--gold-dark);
+    }
+
+    .button.secondary {
+      background: transparent;
+      border-color: #6e665d;
+      color: var(--ink);
+    }
+
+    .contact-hero {
+      background:
+        linear-gradient(90deg, rgba(13, 13, 13, 0.94), rgba(13, 13, 13, 0.68)),
+        url('images%202/hardware%20tools/product4.jpg') center / cover no-repeat;
+      color: white;
+      padding: 58px 0;
+    }
+
+    .breadcrumbs {
+      font-size: 13px;
+      margin: 0 0 20px;
+    }
+
+    .breadcrumbs a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .contact-hero h1 {
+      font-size: 42px;
+      margin: 0 0 12px;
+    }
+
+    .contact-hero p:last-child {
+      color: #ececec;
+      font-size: 16px;
+      line-height: 1.55;
       margin: 0;
+      max-width: 560px;
     }
 
-    .contact-section {
-      background-color: white;
-      max-width: 1000px;
-      margin: 0 auto 60px;
-      padding: 36px;
-      border-radius: 8px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    .contact-main {
+      padding: 52px 0;
     }
 
-    .contact-details {
+    .contact-layout {
+      align-items: stretch;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 28px;
+      gap: 22px;
+      grid-template-columns: 0.85fr 1.15fr;
+    }
+
+    .contact-panel,
+    .map-panel {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      box-shadow: 0 6px 20px rgba(29, 25, 20, 0.07);
+      overflow: hidden;
+    }
+
+    .contact-panel {
+      padding: 30px;
+    }
+
+    .eyebrow {
+      color: var(--gold-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.8px;
+      margin: 0 0 8px;
+      text-transform: uppercase;
+    }
+
+    .contact-panel h2 {
+      font-size: 27px;
+      margin: 0 0 10px;
+    }
+
+    .contact-intro {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.55;
+      margin: 0 0 25px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
     }
 
     .contact-item {
-      background-color: #f8f5f0;
-      border-left: 4px solid #8b5e3c;
-      padding: 16px 18px;
+      align-items: flex-start;
+      display: flex;
+      gap: 15px;
+      padding: 17px 0;
+    }
+
+    .contact-item + .contact-item {
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-icon {
+      align-items: center;
+      background: #f3e7d1;
+      border-radius: 50%;
+      color: var(--gold-dark);
+      display: flex;
+      flex: 0 0 44px;
+      height: 44px;
+      justify-content: center;
+    }
+
+    .contact-icon svg {
+      fill: none;
+      height: 21px;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 1.9;
+      width: 21px;
     }
 
     .contact-item strong {
-      color: #5c3b24;
       display: block;
-      margin-bottom: 6px;
+      font-size: 14px;
+      margin: 2px 0 5px;
     }
 
     .contact-item p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
       margin: 0;
-      color: #555;
-      line-height: 1.5;
     }
 
     .contact-item a {
-      color: #333;
+      color: var(--ink);
       text-decoration: none;
     }
 
     .contact-item a:hover {
-      color: #8b5e3c;
-      text-decoration: underline;
+      color: var(--gold-dark);
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+      margin-top: 24px;
+    }
+
+    .map-panel {
+      display: flex;
+      flex-direction: column;
+      min-height: 570px;
     }
 
     .map {
-      overflow: hidden;
-      border-radius: 8px;
-      border: 1px solid #e4ded5;
+      flex: 1;
     }
 
     .map iframe {
-      display: block;
-      width: 100%;
-      height: 350px;
       border: 0;
+      display: block;
+      height: 100%;
+      min-height: 500px;
+      width: 100%;
     }
 
     .map-link {
-      background-color: #f8f5f0;
-      padding: 14px 16px;
-      text-align: center;
+      align-items: center;
+      background: #f6f1e9;
+      display: flex;
+      justify-content: space-between;
+      padding: 17px 20px;
+    }
+
+    .map-link span {
+      font-size: 13px;
+      font-weight: 700;
     }
 
     .map-link a {
-      color: #5c3b24;
-      font-weight: bold;
+      color: var(--gold-dark);
+      font-size: 13px;
+      font-weight: 700;
       text-decoration: none;
     }
 
-    .footer {
-      background-color: #5c3b24;
+    .site-footer {
+      background: #1d1d1d;
+      color: #eee;
+      padding: 44px 0 20px;
+    }
+
+    .footer-grid {
+      display: grid;
+      gap: 36px;
+      grid-template-columns: 1.3fr 1fr 0.8fr 1fr;
+    }
+
+    .footer-brand .logo {
       color: white;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p,
+    .footer-column p,
+    .footer-column a {
+      color: #c8c8c8;
+      font-size: 13px;
+      line-height: 1.65;
+      margin: 0;
+      text-decoration: none;
+    }
+
+    .footer-column {
+      border-left: 1px solid #4a4a4a;
+      padding-left: 30px;
+    }
+
+    .footer-column h3 {
+      color: white;
+      font-size: 15px;
+      margin: 0 0 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .footer-column a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #755c2c;
+      color: #aaa;
+      font-size: 12px;
+      margin-top: 34px;
+      padding-top: 18px;
       text-align: center;
-      padding: 25px;
-      margin-top: 40px;
+    }
+
+    @media (max-width: 1000px) {
+      .navbar {
+        flex-wrap: wrap;
+      }
+
+      .nav-links {
+        order: 3;
+        width: 100%;
+      }
+
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     @media (max-width: 700px) {
+      .container {
+        padding: 0 18px;
+      }
+
       .navbar {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 16px;
-        padding: 18px 24px;
+        gap: 14px;
+        padding: 14px 18px;
+        position: relative;
+      }
+
+      .company-logo-image {
+        height: 52px;
+        width: 40px;
+      }
+
+      .brand-main {
+        font-size: 19px;
+      }
+
+      .brand-sub {
+        font-size: 9px;
       }
 
       .nav-actions {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 14px;
+        align-items: stretch;
+        flex-direction: row;
         width: 100%;
-      }
-
-      .nav-links a {
-        margin: 0 18px 0 0;
       }
 
       .nav-search {
+        min-width: 0;
         width: 100%;
-        box-sizing: border-box;
       }
 
-      .contact-section {
-        margin: 0 20px 50px;
-        padding: 24px;
+      .nav-links {
+        gap: 20px;
+        overflow-x: auto;
       }
 
-      .contact-details {
+      .contact-hero {
+        padding: 44px 0;
+      }
+
+      .contact-hero h1 {
+        font-size: 34px;
+      }
+
+      .contact-main {
+        padding: 36px 0;
+      }
+
+      .contact-panel {
+        padding: 23px;
+      }
+
+      .map-panel,
+      .map iframe {
+        min-height: 420px;
+      }
+
+      .footer-column:nth-child(3) {
+        border-left: 0;
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo {
+        width: 100%;
+      }
+
+      .nav-actions {
+        flex-direction: column;
+      }
+
+      .call-button {
+        width: 100%;
+      }
+
+      .contact-actions .button {
+        width: 100%;
+      }
+
+      .footer-grid {
         grid-template-columns: 1fr;
+      }
+
+      .footer-column {
+        border-left: 0;
+        border-top: 1px solid #4a4a4a;
+        padding: 24px 0 0;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <div class="navbar">
+  <header class="navbar">
     <a class="logo" href="index.html" aria-label="Ban Cheong Hardware Machinery Supply home">
-      <img class="logo-mark" src="images%202/logo-clean.png" alt="Ban Cheong logo">
+      <img class="company-logo-image" src="images%202/logo-clean.png" alt="Ban Cheong logo">
       <span class="brand-text">
         <span class="brand-main">Ban Cheong</span>
         <span class="brand-sub">Hardware Machinery Supply</span>
       </span>
     </a>
 
-    <div class="nav-actions">
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="contact.html">Contact</a>
-      </div>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a class="active" href="contact.html">Contact</a>
+    </nav>
 
+    <div class="nav-actions">
       <form class="nav-search" action="products.html" method="get">
+        <input name="search" type="search" placeholder="Search products..." aria-label="Search products">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="11" cy="11" r="7"></circle>
           <path d="M16.5 16.5L21 21"></path>
         </svg>
-        <input name="search" type="search" placeholder="Search products">
       </form>
+      <a class="call-button" href="tel:+6567458382">☎&nbsp; Call Us</a>
     </div>
-  </div>
+  </header>
 
-  <div class="page-title">
-    <h1>Contact Us</h1>
-  </div>
-
-  <div class="contact-section">
-    <div class="contact-details">
-      <div class="contact-item">
-        <strong>Address</strong>
-        <p>Blk 342 Ubi Avenue 1, Singapore 400342</p>
+  <main>
+    <section class="contact-hero">
+      <div class="container">
+        <p class="breadcrumbs"><a href="index.html">Home</a> / Contact</p>
+        <h1>Contact Us</h1>
+        <p>Need help locating an item or checking availability? Reach out to our team and we will assist with your product enquiry.</p>
       </div>
+    </section>
 
-      <div class="contact-item">
-        <strong>Opening Hours</strong>
-        <p>Monday - Saturday, 9:00 AM - 5:00 PM</p>
-        <p>Sunday, 9:00 AM - 12:00 PM</p>
-      </div>
+    <section class="contact-main">
+      <div class="container contact-layout">
+        <div class="contact-panel">
+          <p class="eyebrow">Get in touch</p>
+          <h2>How can we help?</h2>
+          <p class="contact-intro">Contact us with a product name or item number for availability, general enquiries and quotations.</p>
 
-      <div class="contact-item">
-        <strong>Email</strong>
-        <p><a href="mailto:tony_bch@hotmail.com">Tony_bch@hotmail.com</a></p>
-      </div>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0z"></path><circle cx="12" cy="10" r="2.5"></circle></svg>
+              </div>
+              <div>
+                <strong>Visit Us</strong>
+                <p>Blk 342 Ubi Avenue 1<br>Singapore 400342</p>
+              </div>
+            </div>
 
-      <div class="contact-item">
-        <strong>Contact Number</strong>
-        <p><a href="tel:+6567458382">6745 8382</a></p>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+              </div>
+              <div>
+                <strong>Opening Hours</strong>
+                <p>Monday – Saturday: 9:00 AM – 5:00 PM<br>Sunday: 9:00 AM – 12:00 PM</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18v14H3z"></path><path d="M3 6l9 7 9-7"></path></svg>
+              </div>
+              <div>
+                <strong>Email Us</strong>
+                <p><a href="mailto:tony_bch@hotmail.com">Tony_bch@hotmail.com</a></p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h4l2 5-3 2c1.5 3 3 4.5 6 6l2-3 5 2v4c0 1.1-.9 2-2 2C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h2z"></path></svg>
+              </div>
+              <div>
+                <strong>Call Us</strong>
+                <p><a href="tel:+6567458382">+65 6745 8382</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-actions">
+            <a class="button" href="tel:+6567458382">Call Now</a>
+            <a class="button secondary" href="mailto:tony_bch@hotmail.com">Send Email</a>
+          </div>
+        </div>
+
+        <div class="map-panel">
+          <div class="map">
+            <iframe
+              title="Ban Cheong Hardware Machinery Supply location"
+              src="https://www.google.com/maps?q=Blk%20342%20Ubi%20Avenue%201%20Singapore%20400342&output=embed"
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+          <div class="map-link">
+            <span>Blk 342 Ubi Avenue 1, Singapore 400342</span>
+            <a href="https://maps.app.goo.gl/qbHdbSFqzrVQn62y8" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+          </div>
+        </div>
       </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="logo" href="index.html">
+            <img class="company-logo-image" src="images%202/logo-clean.png" alt="Ban Cheong logo">
+            <span class="brand-text">
+              <span class="brand-main">Ban Cheong</span>
+              <span class="brand-sub">Hardware Machinery Supply</span>
+            </span>
+          </a>
+          <p>Your reliable partner for hardware, machinery, cleaning materials and industrial supplies in Singapore.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p><a href="tel:+6567458382">☎ +65 6745 8382</a></p>
+          <p><a href="mailto:tony_bch@hotmail.com">✉ Tony_bch@hotmail.com</a></p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact Us</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Business Hours</h3>
+          <p>Mon – Sat: 9:00am – 5:00pm</p>
+          <p>Sunday: 9:00am – 12:00pm</p>
+        </div>
+      </div>
+      <div class="footer-bottom">Copyright 2026 © Ban Cheong Hardware Machinery Supply · Reg no 47030000X.</div>
     </div>
-
-    <div class="map">
-      <iframe
-        src="https://www.google.com/maps?q=Blk%20342%20Ubi%20Avenue%201%20Singapore%20400342&output=embed"
-        allowfullscreen=""
-        loading="lazy">
-      </iframe>
-      <div class="map-link">
-        <a href="https://maps.app.goo.gl/qbHdbSFqzrVQn62y8" target="_blank" rel="noopener">Open in Google Maps</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <p>© 2026 Ban Cheong Hardware. All rights reserved.</p>
-  </div>
-
+  </footer>
 </body>
 </html>
