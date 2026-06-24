@@ -227,7 +227,32 @@
     }
 
     .hero-slide.contain-banner {
-      background-size: contain;
+      background: #111;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .hero-slide.contain-banner::before {
+      background: var(--hero-image) center / cover no-repeat;
+      content: "";
+      filter: blur(22px);
+      inset: -32px;
+      opacity: 0.48;
+      position: absolute;
+      transform: scale(1.05);
+      z-index: 0;
+    }
+
+    .hero-slide.contain-banner::after {
+      background: var(--hero-image) center / contain no-repeat;
+      content: "";
+      inset: 0;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .hero-slide.contain-banner .hero-banner-link {
+      z-index: 2;
     }
 
     .hero-slide.signboard-banner {
