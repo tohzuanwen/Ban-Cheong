@@ -777,7 +777,7 @@
 
     .category-nav {
       justify-content: flex-start;
-      margin: 0;
+      margin: 0 auto;
       max-width: 1240px;
       padding: 0 28px 22px;
     }
@@ -830,12 +830,25 @@
     }
 
     .sidebar-links a {
+      align-items: center;
       border-left: 3px solid transparent;
       border-radius: 0 5px 5px 0;
       color: var(--ink);
+      display: flex;
       font-size: 13px;
+      justify-content: space-between;
       padding: 10px 9px;
       text-decoration: none;
+    }
+
+    .category-count {
+      background: #f3eee6;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: 11px;
+      min-width: 25px;
+      padding: 3px 6px;
+      text-align: center;
     }
 
     .sidebar-links a:first-child,
@@ -1304,14 +1317,14 @@
     <aside class="catalog-sidebar" aria-label="Product categories">
       <h2>Categories</h2>
       <nav class="sidebar-links">
-        <a href="#products">All Products</a>
-        <a href="#gloves">Gloves</a>
-        <a href="#batteries">Batteries</a>
-        <a href="#ladders">Ladders &amp; Trolleys</a>
-        <a href="#cleaning-materials">Cleaning Materials</a>
-        <a href="#mask">Masks</a>
-        <a href="#hardware-tools">Hardware Tools</a>
-        <a href="#racks">Metal Shelves &amp; Racks</a>
+        <a href="#products"><span>All Products</span><span class="category-count">45</span></a>
+        <a href="#gloves"><span>Gloves</span><span class="category-count">6</span></a>
+        <a href="#batteries"><span>Batteries</span><span class="category-count">3</span></a>
+        <a href="#ladders"><span>Ladders &amp; Trolleys</span><span class="category-count">5</span></a>
+        <a href="#cleaning-materials"><span>Cleaning Materials</span><span class="category-count">20</span></a>
+        <a href="#mask"><span>Masks</span><span class="category-count">1</span></a>
+        <a href="#hardware-tools"><span>Hardware Tools</span><span class="category-count">9</span></a>
+        <a href="#racks"><span>Metal Shelves &amp; Racks</span><span class="category-count">1</span></a>
       </nav>
       <p class="sidebar-note">Need a quotation or cannot find an item? Contact our team with the product name or item number.</p>
     </aside>
