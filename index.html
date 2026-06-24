@@ -286,40 +286,6 @@
       transform: scale(1.25);
     }
 
-    .trust-bar {
-      background: #1b1b1b;
-      color: white;
-    }
-
-    .trust-items {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    .trust-item {
-      align-items: center;
-      display: flex;
-      font-size: 13px;
-      font-weight: 700;
-      gap: 10px;
-      justify-content: center;
-      padding: 16px;
-    }
-
-    .trust-item + .trust-item {
-      border-left: 1px solid #494949;
-    }
-
-    .trust-item svg {
-      fill: none;
-      height: 22px;
-      stroke: var(--gold);
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      stroke-width: 2;
-      width: 22px;
-    }
-
     .section {
       padding: 54px 0;
     }
@@ -698,19 +664,6 @@
         right: 10px;
       }
 
-      .trust-items {
-        grid-template-columns: 1fr;
-      }
-
-      .trust-item {
-        justify-content: flex-start;
-      }
-
-      .trust-item + .trust-item {
-        border-left: 0;
-        border-top: 1px solid #494949;
-      }
-
       .section {
         padding: 42px 0;
       }
@@ -833,7 +786,7 @@
   <main>
     <section class="hero" data-hero-carousel aria-label="Featured banners">
       <div class="hero-track">
-        <article class="hero-slide signboard-banner is-active" style="--hero-image: url('images%202/storefront.png')" aria-label="Ban Cheong Hardware Machinery Supply"></article>
+        <article class="hero-slide is-active" style="--hero-image: url('images%202/banners/reliable-hardware-banner.png')" aria-label="Reliable hardware and industrial supplies"></article>
 
         <article class="hero-slide" style="--hero-image: url('images%202/banners/gp-batteries-banner.png')">
           <a class="hero-banner-link" href="products.html#batteries" aria-label="Shop GP Batteries"></a>
@@ -848,23 +801,6 @@
       <button class="hero-carousel-button next" type="button" aria-label="Next banner">&#8250;</button>
       <div class="hero-dots" aria-label="Choose a banner"></div>
     </section>
-
-    <div class="trust-bar">
-      <div class="container trust-items">
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 5-3.1 8.2-7 10-3.9-1.8-7-5-7-10V6l7-3z"></path><path d="M9 12l2 2 4-5"></path></svg>
-          Quality Products
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16v10H4z"></path><path d="M8 11h8M8 14h5"></path></svg>
-          Competitive Prices
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h11v10H3z"></path><path d="M14 10h4l3 3v4h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg>
-          Reliable Local Supply
-        </div>
-      </div>
-    </div>
 
     <section class="section" id="categories">
       <div class="container">
