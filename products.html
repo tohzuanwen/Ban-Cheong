@@ -283,6 +283,16 @@
       display: none;
     }
 
+    .visually-hidden {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+
     .product-image {
       height: 240px;
       overflow: hidden;
@@ -1919,15 +1929,14 @@
       <div class="product">
         <div class="product-image product-carousel">
           <button class="carousel-button previous" type="button" aria-label="Previous ELCB image">&lt;</button>
-          <img loading="lazy" decoding="async" class="carousel-image is-active" src="images%202/hardware%20tools/product5.jpg" alt="ELCB Plug" data-title="ELCB Plug">
-          <img loading="lazy" decoding="async" class="carousel-image" src="images%202/hardware%20tools/product16.jpg" alt="ELCB Adapter" data-title="ELCB Adapter">
+          <img loading="lazy" decoding="async" class="carousel-image is-active" src="images%202/hardware%20tools/product5.jpg" alt="ELCB Plug" data-title="ELCB Plug" data-item="Item No. 47">
+          <img loading="lazy" decoding="async" class="carousel-image" src="images%202/hardware%20tools/product16.jpg" alt="ELCB Adapter" data-title="ELCB Adapter" data-item="Item No. 46">
           <button class="carousel-button next" type="button" aria-label="Next ELCB image">&gt;</button>
           <span class="carousel-count">1 / 2</span>
         </div>
-        <h2>ELCB Plug</h2>
-        <p>Item No. 47</p>
-        <h2>ELCB Adapter</h2>
-        <p>Item No. 46</p>
+        <h2 class="carousel-title">ELCB Plug</h2>
+        <p class="carousel-item">Item No. 47</p>
+        <span class="visually-hidden">ELCB Plug Item No. 47 ELCB Adapter ELCB Adaptor Item No. 46</span>
       </div>
 
 
