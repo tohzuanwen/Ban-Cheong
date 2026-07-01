@@ -2140,18 +2140,30 @@
   }
 
   document.querySelectorAll(".product-carousel").forEach((carousel) => {
+    const product = carousel.closest(".product");
     const images = Array.from(carousel.querySelectorAll(".carousel-image"));
     const count = carousel.querySelector(".carousel-count");
+    const title = product.querySelector(".carousel-title");
+    const item = product.querySelector(".carousel-item");
     let currentIndex = 0;
 
     function showImage(nextIndex) {
       currentIndex = (nextIndex + images.length) % images.length;
+      const activeImage = images[currentIndex];
 
       images.forEach((image, index) => {
         image.classList.toggle("is-active", index === currentIndex);
       });
 
       count.textContent = `${currentIndex + 1} / ${images.length}`;
+
+      if (title && activeImage.dataset.title) {
+        title.textContent = activeImage.dataset.title;
+      }
+
+      if (item && activeImage.dataset.item) {
+        item.textContent = activeImage.dataset.item;
+      }
     }
 
     carousel.querySelector(".previous").addEventListener("click", (event) => {
